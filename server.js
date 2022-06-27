@@ -3,6 +3,7 @@ const express = require('express')
 const db = require('./db/db.json')
 const path = require('path')
 const { urlencoded } = require('express')
+const res = require('express/lib/response')
 const PORT = 3002
 
 const app = express()
@@ -18,9 +19,14 @@ app.use(express.static('public'))
 app.get('/', (req, res) =>
   res.sendFile(path.join(__dirname, '/public/index.html'))
 );
+
 app.get('/notes', (req, res) =>
   res.sendFile(path.join(__dirname, '/public/notes.html'))
 );
+
+// app.get('*', (req, rest) =>{
+//     res.sendFile(path.join(__dirname, '/public/index.html'))
+// })
 
 
 app.use('/api/notes', require('./api/notes'))
