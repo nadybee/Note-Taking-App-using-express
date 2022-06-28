@@ -1,9 +1,7 @@
 
 const express = require('express')
-const db = require('./db/db.json')
 const path = require('path')
-const { urlencoded } = require('express')
-const res = require('express/lib/response')
+
 const PORT = 3002
 
 const app = express()
@@ -29,8 +27,9 @@ app.get('/notes', (req, res) =>
 // })
 
 
+
+
 app.use('/api/notes', require('./api/notes'))
-// app.use(express.static(path.join(_dirname, 'public')))
 
 
 
