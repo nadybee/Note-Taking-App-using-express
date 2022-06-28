@@ -4,10 +4,19 @@ const uuid = require('uuid')
 const router = express.Router()
 const db = require('../db/db.json')
 const fs = require('fs')
+const { route } = require('express/lib/router')
+const { readFile } = require('fs/promises')
 
 
-router.get('/', (req, res) => res.json(db));
+// router.get('/', (req, res) => res.json(db));
+router.get('/', function(req, res){
+    readFile("./db/db.json", "utf8")
+    .then((data)=>{
+        notes = [].concat(JSON.parse(data))
+        res.json(notes);
 
+    })
+})
 
 
 router.post("/" , (req,res) => {
