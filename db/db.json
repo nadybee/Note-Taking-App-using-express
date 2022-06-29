@@ -1,1 +1,17 @@
-[{"id":"03e36995-671d-45ff-9e6b-c3485314ea70","title":"A sample note","text":"you can add notes\nyou can delete notes"}]
+[
+    {
+        "id": "03e36995-671d-45ff-9e6b-c3485314ea70",
+        "title": "A sample note",
+        "text": "you can add notes\nyou can delete notes"
+    },
+    {
+        "id": "686e14d2-b308-4746-813e-ba92a0a2a959",
+        "title": "ReSubmit Assignment",
+        "text": "delete node modules\nadd more notes\nThere is a routes folder?"
+    },
+    {
+        "id": "0b70ea22-6b55-4842-8676-801cf9dd493e",
+        "title": "Shopping list",
+        "text": "bread\neggs \nmilk \nsugar"
+    }
+]
