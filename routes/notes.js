@@ -4,15 +4,13 @@ const uuid = require('uuid')
 const router = express.Router()
 const db = require('../db/db.json')
 const fs = require('fs')
-const { route } = require('express/lib/router')
 const { readFile } = require('fs/promises')
-
 
 // router.get('/', (req, res) => res.json(db));
 router.get('/', function(req, res){
     readFile("./db/db.json", "utf8")
     .then((data)=>{
-        notes = JSON.parse(data)
+       let notes = JSON.parse(data)
         res.json(notes);
 
     })
@@ -48,15 +46,13 @@ else {
     })
 
 }
-    
-   
+       
 })
 
 //router delete
 router.delete("/:id", (req, res) => {
     const found = db.some((note) => note.id === req.params.id)
 
-    // console.log(found)
     if (found) {
         const filterData = db.filter( note => note.id!= req.params.id)
         //  console.log(filterData)
@@ -68,7 +64,7 @@ router.delete("/:id", (req, res) => {
           status: 'success',
           body: filterData,
       }
-    //   console.log(response)
+
       res.status(201).json(response)
 
    
