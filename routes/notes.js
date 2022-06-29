@@ -12,7 +12,7 @@ const { readFile } = require('fs/promises')
 router.get('/', function(req, res){
     readFile("./db/db.json", "utf8")
     .then((data)=>{
-        notes = [].concat(JSON.parse(data))
+        notes = JSON.parse(data)
         res.json(notes);
 
     })

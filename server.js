@@ -29,7 +29,7 @@ app.get('/notes', (req, res) =>
 
 
 
-app.use('/api/notes', require('./api/notes'))
+app.use('/api/notes', require('./routes/notes'))
 
 
 
